@@ -1,0 +1,608 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' lang='pt-BR' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0, viewport-fit=cover' name='viewport'/>
+<meta content='#111111' name='theme-color'/>
+<link href='data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%23111111%27%2F%3E%3Crect%20x%3D%2712%27%20y%3D%275%27%20width%3D%278%27%20height%3D%2715%27%20rx%3D%274%27%20fill%3D%27%234dc3ff%27%2F%3E%3Cpath%20d%3D%27M8%2015a8%208%200%200%200%2016%200%27%20fill%3D%27none%27%20stroke%3D%27%234dc3ff%27%20stroke-width%3D%272.5%27%20stroke-linecap%3D%27round%27%2F%3E%3Cline%20x1%3D%2716%27%20y1%3D%2723%27%20x2%3D%2716%27%20y2%3D%2727%27%20stroke%3D%27%234dc3ff%27%20stroke-width%3D%272.5%27%20stroke-linecap%3D%27round%27%2F%3E%3Cline%20x1%3D%2711%27%20y1%3D%2727%27%20x2%3D%2721%27%20y2%3D%2727%27%20stroke%3D%27%234dc3ff%27%20stroke-width%3D%272.5%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fsvg%3E' rel='icon' type='image/svg+xml'/>
+<title>VoiceKar</title>
+<b:skin><![CDATA[]]></b:skin>
+<style>
+/* ===== RESET ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html, body { height:100%; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #1a1a1a;
+  color: #d0d0d0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== NEUTRALIZA ELEMENTOS DO BLOGGER ===== */
+#navbar, #navbar-iframe, .navbar,
+.blogger-clickTrap, #Attribution1, .feed-links, .quickedit,
+.status-msg-wrap, .status-msg-body, .status-msg-border, .status-msg-bg {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+.section, .widget { margin:0 !important; padding:0 !important; }
+#hidden-section { display:none !important; }
+
+/* ===== HEADER ===== */
+header.portal-header {
+  background: #111;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header.portal-header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e0e0e0;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+}
+
+/* ===== ICONE DA MARCA (SVG) ===== */
+.brand-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.brand-icon rect { fill: #22d3ee; }
+.brand-icon .cord {
+  fill: none;
+  stroke: #22d3ee;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* ===== BOTÃO GERAR LISTA ===== */
+.btn-genlist {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #252525;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, border-color .2s, color .2s;
+}
+
+.btn-genlist:hover { background: #303030; border-color: #4a4a4a; color: #ddd; }
+.btn-genlist:active { background: #2a2a2a; }
+
+.btn-genlist svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.btn-genlist.has-sel { border-color: #2ecc71; color: #2ecc71; }
+
+.btn-genlist .badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #2ecc71;
+  color: #0f2417;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  display: none;
+  pointer-events: none;
+}
+
+.btn-genlist.has-sel .badge { display: block; }
+
+/* ===== SEARCH ===== */
+.search-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #252525;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 40px;
+  gap: 8px;
+}
+
+.search-wrap svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #777;
+  stroke-width: 2;
+  stroke-linecap: round;
+  flex-shrink: 0;
+}
+
+.search-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ccc;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.search-wrap input::placeholder { color: #666; }
+
+.btn-clear {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #333;
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+
+.btn-clear:hover { background: #444; }
+.btn-clear.show { display: flex; }
+
+/* ===== MENU ===== */
+.menu {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu ul { list-style: none; }
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px 8px 10px;
+  margin-bottom: 2px;
+  border-radius: 8px;
+  background: #222;
+  border-right: 4px solid;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #c8c8c8;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background .15s;
+}
+
+.menu li:active { background: #2a2a2a; }
+.menu li.hidden { display: none; }
+.menu li.checked { background: #2a3230; }
+
+/* ===== CHECKBOX ===== */
+.menu li input.chk {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #2ecc71;
+}
+
+.menu li .item-text {
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.menu li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* ===== COUNT ===== */
+.count-bar {
+  background: #151515;
+  padding: 8px 20px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  border-top: 1px solid #2a2a2a;
+}
+
+.count-bar .sel-info { color: #2ecc71; }
+
+/* ===== SCROLLBAR ===== */
+.menu::-webkit-scrollbar { width: 4px; }
+.menu::-webkit-scrollbar-track { background: transparent; }
+.menu::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+/* ===== NO RESULTS ===== */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+  color: #555;
+}
+
+.no-results svg {
+  width: 48px;
+  height: 48px;
+  fill: none;
+  stroke: #444;
+  stroke-width: 1.5;
+  margin-bottom: 12px;
+}
+
+.no-results p { font-size: 15px; }
+.no-results.show { display: block; }
+</style>
+</head>
+
+<body>
+<header class='portal-header'>
+  <svg class='brand-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'>
+    <g transform='rotate(45 12 12)'>
+      <rect x='9' y='2.5' width='6' height='10' rx='3'/>
+      <rect x='10.5' y='11.5' width='3' height='7.5' rx='1.5'/>
+    </g>
+    <path class='cord' d='M7 17 C 5 19, 9 20.5, 6 23'/>
+  </svg>
+  <h1>VoiceKar</h1>
+
+  <button class='btn-genlist' id='btnGenList' title='Gerar lista' type='button'>
+    <svg viewBox='0 0 24 24'>
+      <line x1='8' y1='6' x2='21' y2='6'/>
+      <line x1='8' y1='12' x2='21' y2='12'/>
+      <line x1='8' y1='18' x2='21' y2='18'/>
+      <line x1='3' y1='6' x2='3.01' y2='6'/>
+      <line x1='3' y1='12' x2='3.01' y2='12'/>
+      <line x1='3' y1='18' x2='3.01' y2='18'/>
+    </svg>
+    <span class='badge' id='genBadge'>0</span>
+  </button>
+
+  <button class='btn-genlist' id='btnImport' title='Importar títulos (.json)' type='button'>
+    <svg viewBox='0 0 24 24'>
+      <path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/>
+      <polyline points='7 10 12 15 17 10'/>
+      <line x1='12' y1='15' x2='12' y2='3'/>
+    </svg>
+  </button>
+  <input accept='.json,application/json' id='importFile' style='display:none' type='file'/>
+
+  <div class='search-wrap'>
+    <svg viewBox='0 0 24 24'><circle cx='11' cy='11' r='7'/><line x1='16.5' y1='16.5' x2='21' y2='21'/></svg>
+    <input autocomplete='off' id='searchInput' placeholder='Buscar vídeo...' type='text'/>
+    <button class='btn-clear' id='btnClear' title='Limpar' type='button'>✕</button>
+  </div>
+</header>
+
+<div class='menu' id='menuList'>
+  <ul id='videoList'>
+    <li data-tags='123,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>14 Bis - Bola de Meia Bola de Gude=Karaokêland</span></li>
+    <li data-tags='123,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>14 Bis - Espanhola=ATILA</span></li>
+    <li data-tags='123,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>14 Bis - Linda Juventude=KaraokêLand</span></li>
+    <li data-tags='123,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>14 Bis - Natural=Karaokêland</span></li>
+    <li data-tags='123,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>14 Bis - Planeta Sonho=Karaokêland</span></li>
+    <li data-tags='123,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>14 Bis - Todo Azul do Mar=KaraokêLand</span></li>
+    <li data-tags='123,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>14 Bis - Uma Velha Canção=Karaokêland</span></li>
+    <li data-tags='123,inglesas-americanas,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>3 Doors Down - Here Without You=KaraFun</span></li>
+    <li data-tags='123,inglesas-americanas,mu,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>4 Non Blondes - Whats Up=keep thebestalive</span></li>
+    <li data-tags='a,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>A Cor do Som - Abri A Porta=Karaokêland</span></li>
+    <li data-tags='a,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>A Cor Do Som - Menino Deus=Karaokêland</span></li>
+    <li data-tags='a,brasileiras,mpb,ho,mo' style='border-right-color:#2ecc71'><input class='chk' type='checkbox'/><span class='item-text'>A Cor do Som - Zanzibar=Mr. Elvis</span></li>
+  </ul>
+  <div class='no-results' id='noResults'>
+    <svg viewBox='0 0 24 24'><circle cx='11' cy='11' r='7'/><line x1='16.5' y1='16.5' x2='21' y2='21'/><line x1='8' y1='8' x2='14' y2='14'/><line x1='14' y1='8' x2='8' y2='14'/></svg>
+    <p>Nenhum resultado encontrado</p>
+  </div>
+</div>
+
+<div class='count-bar' id='countBar'>Exibindo <span id='countVisible'>0</span> de <span id='countTotal'>0</span> vídeos <span class='sel-info' id='selInfo'></span></div>
+
+<script type='text/javascript'>
+//<![CDATA[
+// ===== IMPORTAR TITULOS (.json) — roda ANTES do script principal =====
+(function(){
+  var STORAGE_KEY = 'voicekar_imported_titles';
+  var list = document.getElementById('videoList');
+  if (!list) { return; }
+
+  function buildFromTitles(titles){
+    list.innerHTML = '';
+    titles.forEach(function(t){
+      var li = document.createElement('li');
+      li.setAttribute('data-tags', '');
+      li.style.borderRightColor = '#2ecc71';
+      var chk = document.createElement('input');
+      chk.className = 'chk';
+      chk.type = 'checkbox';
+      var span = document.createElement('span');
+      span.className = 'item-text';
+      span.textContent = String(t);
+      li.appendChild(chk);
+      li.appendChild(span);
+      list.appendChild(li);
+    });
+  }
+
+  // Se ja existe uma lista importada salva, reconstroi a lista ANTES do
+  // script principal inicializar (assim busca/selecao/contagem funcionam).
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      var arr = JSON.parse(raw);
+      if (Array.isArray(arr) && arr.length) { buildFromTitles(arr); }
+    }
+  } catch (e) {}
+
+  // Botao importar
+  var btnImport  = document.getElementById('btnImport');
+  var importFile = document.getElementById('importFile');
+  if (btnImport && importFile) {
+    btnImport.addEventListener('click', function(){ importFile.click(); });
+    importFile.addEventListener('change', function(){
+      var file = this.files && this.files[0];
+      this.value = '';
+      if (!file) { return; }
+      var reader = new FileReader();
+      reader.onload = function(){
+        try {
+          var data = JSON.parse(reader.result);
+          if (!Array.isArray(data)) { throw new Error('formato'); }
+          var titles = data
+            .map(function(x){ return String(x); })
+            .filter(function(s){ return s.trim() !== ''; });
+          if (!titles.length) { throw new Error('vazio'); }
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(titles));
+          location.reload();
+        } catch (err) {
+          alert('Arquivo JSON invalido. Envie um arquivo com uma lista de titulos.');
+        }
+      };
+      reader.readAsText(file);
+    });
+  }
+})();
+//]]>
+</script>
+
+<script type='text/javascript'>
+//<![CDATA[
+(function(){
+  var input        = document.getElementById('searchInput');
+  var btnClear     = document.getElementById('btnClear');
+  var btnGenList   = document.getElementById('btnGenList');
+  var genBadge     = document.getElementById('genBadge');
+  var list         = document.getElementById('videoList');
+  var noResults    = document.getElementById('noResults');
+  var countVisible = document.getElementById('countVisible');
+  var countTotal   = document.getElementById('countTotal');
+  var selInfo      = document.getElementById('selInfo');
+  if (!input || !list) { return; }
+
+  var allItems = list.querySelectorAll('li');
+  var total = allItems.length;
+  countTotal.textContent = total;
+  countVisible.textContent = total;
+
+  /* ---------- BUSCA ---------- */
+  input.addEventListener('input', function(){
+    btnClear.classList.toggle('show', this.value.length > 0);
+    filter();
+  });
+
+  btnClear.addEventListener('click', function(){
+    input.value = '';
+    btnClear.classList.remove('show');
+    filter();
+    input.focus();
+  });
+
+  function filter(){
+    var q = input.value.toLowerCase().trim();
+    var visible = 0;
+    Array.prototype.forEach.call(allItems, function(li){
+      var text = itemTitle(li).toLowerCase();
+      var tags = (li.getAttribute('data-tags') || '').toLowerCase();
+      var match = !q || text.indexOf(q) !== -1 || tags.indexOf(q) !== -1;
+      li.classList.toggle('hidden', !match);
+      if (match) { visible++; }
+    });
+    countVisible.textContent = visible;
+    noResults.classList.toggle('show', visible === 0);
+  }
+
+  /* ---------- TITULO DO ITEM ---------- */
+  function itemTitle(li){
+    var span = li.querySelector('.item-text');
+    return ((span ? span.textContent : li.textContent) || '').replace(/\s+/g, ' ').trim();
+  }
+
+  /* ---------- SELECAO ---------- */
+  Array.prototype.forEach.call(allItems, function(li){
+    var chk = li.querySelector('input.chk');
+    if (!chk) { return; }
+
+    chk.addEventListener('change', function(){
+      li.classList.toggle('checked', chk.checked);
+      updateSelection();
+    });
+
+    /* clicar no texto tambem marca/desmarca */
+    var span = li.querySelector('.item-text');
+    if (span) {
+      span.addEventListener('click', function(ev){
+        if (ev.target.tagName === 'A') { return; }
+        chk.checked = !chk.checked;
+        li.classList.toggle('checked', chk.checked);
+        updateSelection();
+      });
+    }
+  });
+
+  function getSelected(){
+    var out = [];
+    Array.prototype.forEach.call(allItems, function(li){
+      var chk = li.querySelector('input.chk');
+      if (chk && chk.checked) {
+        out.push({ title: itemTitle(li), tags: li.getAttribute('data-tags') || '' });
+      }
+    });
+    return out;
+  }
+
+  function updateSelection(){
+    var n = getSelected().length;
+    genBadge.textContent = n;
+    btnGenList.classList.toggle('has-sel', n > 0);
+    selInfo.textContent = n > 0 ? ('\u2014 ' + n + ' selecionado' + (n > 1 ? 's' : '')) : '';
+  }
+
+  /* ---------- ESCAPE ---------- */
+  function esc(s){
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  /* ---------- GERAR LISTA EM NOVA ABA ---------- */
+  btnGenList.addEventListener('click', function(){
+    var sel = getSelected();
+    if (sel.length === 0) {
+      alert('Selecione ao menos um item para gerar a lista.');
+      return;
+    }
+
+    var d = new Date();
+    var stamp = d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR');
+
+    var rows = '';
+    for (var i = 0; i < sel.length; i++) {
+      rows += '<tr><td class="n">' + (i + 1) + '</td><td>' + esc(sel[i].title) +
+              '</td><td class="tg">' + esc(sel[i].tags) + '</td></tr>';
+    }
+
+    var css = 'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;' +
+              'background:#1a1a1a;color:#d0d0d0;margin:0;padding:24px;font-size:16px;' +
+              '-webkit-text-size-adjust:100%}' +
+              'h1{font-size:22px;color:#e0e0e0;margin:0 0 6px}' +
+              '.meta{font-size:14px;color:#888;margin-bottom:18px}' +
+              'table{width:100%;border-collapse:collapse;background:#222;border-radius:8px;overflow:hidden}' +
+              'th,td{padding:11px 12px;text-align:left;font-size:16px;border-bottom:1px solid #303030;' +
+              'word-break:break-word}' +
+              'th{background:#151515;color:#999;font-size:13px;text-transform:uppercase;letter-spacing:.5px}' +
+              'tr:last-child td{border-bottom:none}' +
+              'td.n{width:46px;color:#777;text-align:right}' +
+              'td.tg{width:230px;color:#2ecc71;font-size:13px}' +
+              '@media (max-width:700px){body{padding:12px;font-size:18px}' +
+              'h1{font-size:24px}.meta{font-size:15px}' +
+              'th,td{font-size:18px;padding:12px 8px}' +
+              'th{font-size:14px}td.n{width:38px}' +
+              'td.tg{display:none}th:nth-child(3){display:none}}' +
+              '@media print{body{background:#fff;color:#000;padding:0}table{background:#fff}' +
+              'th{background:#eee;color:#000}td.tg{color:#555}}';
+
+    var html = '<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">' +
+               '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+               '<title>Lista Gerada \u2014 ' + sel.length + ' item(ns)</title>' +
+               '<style>' + css + '</style></head><body>' +
+               '<h1>\uD83D\uDCCB Lista Gerada</h1>' +
+               '<div class="meta">' + sel.length + ' item(ns) selecionado(s) \u2014 ' + esc(stamp) + '</div>' +
+               '<table><thead><tr><th>#</th><th>T\u00edtulo</th><th>Tags</th></tr></thead>' +
+               '<tbody>' + rows + '</tbody></table>' +
+               '</body></html>';
+
+    /* ---- abre em janela POPUP ---- */
+    var pw = Math.min(760, Math.max(480, screen.availWidth - 120));
+    var ph = Math.min(680, Math.max(420, screen.availHeight - 140));
+    var px = Math.round((screen.availWidth  - pw) / 2);
+    var py = Math.round((screen.availHeight - ph) / 2);
+    var feats = 'popup=yes,width=' + pw + ',height=' + ph + ',left=' + px + ',top=' + py +
+                ',scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no,status=no';
+
+    /* Abre a partir de um Blob (documento real) para o navegador respeitar
+       a meta viewport. Escrever com document.write faz vários navegadores
+       de celular renderizarem em 980px e reduzirem a fonte. */
+    var blobUrl = null;
+    try {
+      if (window.Blob && window.URL && window.URL.createObjectURL) {
+        blobUrl = URL.createObjectURL(new Blob([html], { type: 'text/html;charset=utf-8' }));
+      }
+    } catch (e) { blobUrl = null; }
+
+    var win = window.open(blobUrl || '', 'listaGerada', feats);
+    if (!win) {
+      if (blobUrl) { URL.revokeObjectURL(blobUrl); }
+      alert('O navegador bloqueou a janela popup. Permita pop-ups para este site e tente novamente.');
+      return;
+    }
+
+    if (!blobUrl) {
+      win.document.open();
+      win.document.write(html);
+      win.document.close();
+      /* reforca o viewport caso o navegador ignore a meta tag inicial */
+      try {
+        var mv = win.document.querySelector('meta[name="viewport"]');
+        if (!mv) {
+          mv = win.document.createElement('meta');
+          mv.setAttribute('name', 'viewport');
+          win.document.head.appendChild(mv);
+        }
+        mv.setAttribute('content', 'width=device-width, initial-scale=1.0');
+      } catch (e2) {}
+    } else {
+      setTimeout(function(){ URL.revokeObjectURL(blobUrl); }, 60000);
+    }
+
+    try { win.focus(); } catch (e3) {}
+  });
+
+  filter();
+  updateSelection();
+})();
+//]]>
+</script>
+<b:section id='oculto' showaddelement='no'>
+<b:widget id='HTML1' locked='true' title='' type='HTML' version='1'>
+<b:includable id='main'/>
+</b:widget>
+</b:section>
+</body>
+</html>
